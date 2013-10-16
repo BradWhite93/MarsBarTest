@@ -2,28 +2,39 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Mars Nutritional information</title>
 </head>
 
 <body>
 <script>
-function Mars(Energy, Protein, Carbohydrate, sugars, Fat, Fibre, Sodium){
-	this.Energy = energy;
-	this.Protein = protein;
-	this.Carbohydrate = carbohydrate;
+
+
+function Mars(energy, protein, carbohydrate, sugars, fat, fibre, sodium)
+{
+	this.energy = energy;
+	this.protein = protein;
+	this.carbohydrate = carbohydrate;
 	this.sugars = sugars;
-	this.Fat = fat;
-	this.Fibre = fibre;
-	this.Sodium = sodium;
+	this.fat = fat;
+	this.fibre = fibre;
+	this.sodium = sodium;
 }
 
-var mars = new Mars('1888','4.3', '68.9','59.7','17.1','1.2', '0.16')
-
+var mars = new Mars(
+	'1888', '4.3', '68.9', '59.7', '17.1', '1.2', '0.16');
+	
 window.localStorage.setItem("mars", JSON.stringify(mars));
 
-var retrieved_mars = JSON.parse(window.localStorage.getItem("mars"));
 
-alert("Hello");
+
+var retrieved_mars = 
+	JSON.parse(window.localStorage.getItem("mars"));
+
+
+
+alert(retrieved_mars.energy);
+
+
 
 </script>
 </body>
